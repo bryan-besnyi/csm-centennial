@@ -46,15 +46,15 @@ class MyDocument extends Document {
             href="https://collegeofsanmateo.edu/z-omniupdate/css/icons.css"
             rel="stylesheet"
           />
-          <script
+          {/* <script
             src="https://collegeofsanmateo.edu/assets/scripts/icons.js"
             type="text/javascript"
-          ></script>
+          ></script> */}
 
-          <script
+          {/* <script
             type="text/javascript"
             src="https//www.google-analytics.com/urchin.js"
-          ></script>
+          ></script> */}
         </Head>
         <body className="body--interior">
           <Header />
