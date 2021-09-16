@@ -64,7 +64,6 @@ function Layout({ children }) {
                         className="col-12"
                         id="section-label-maincontent"
                       >
-                        <h1 className="page-title">Overview</h1>
                         {children}
                       </section>
                     </div>
