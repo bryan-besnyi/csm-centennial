@@ -1,4 +1,4 @@
-import Link from "next/Link";
+import Link from "next/link";
 
 let client = require("contentful").createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
@@ -11,13 +11,13 @@ export default function Home({ stories }) {
       <div className="row">
         {stories.map((story) => {
           return (
-            <div className="col-12 col-lg-6">
+            <div key={story.sys.id} className="col-12 col-lg-6">
               <div className="card border-primary d-flex flex-column mb-3">
                 <h2 className="card-header">{story.fields.title}</h2>
                 <div className="card-body text-primary">
                   <em className="card-text">{story.fields.subtitle}</em>
                   <p>
-                    <Link href={`${story.fields.slug}`}>
+                    <Link href={`/${story.fields.slug}`}>
                       <a className="btn btn-primary mb-3">
                         {story.fields.buttonText}
                       </a>
