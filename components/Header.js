@@ -9,7 +9,7 @@ function Header() {
             data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
-            ariaExpanded="false"
+            aria-expanded="false"
             aria-label="Main Menu"
           >
             <span className="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@ function Header() {
                   role="button"
                   data-toggle="dropdown"
                   ariaHasPopup="true"
-                  ariaExpanded="false"
+                  aria-expanded="false"
                 >
                   Academics{" "}
                 </a>
@@ -86,7 +86,7 @@ function Header() {
                   href="#"
                   data-toggle="dropdown"
                   ariaHasPopup="true"
-                  ariaExpanded="false"
+                  aria-expanded="false"
                 >
                   Student Services{" "}
                 </a>
@@ -276,7 +276,7 @@ function Header() {
                   href="#"
                   data-toggle="dropdown"
                   ariaHasPopup="true"
-                  ariaExpanded="false"
+                  aria-expanded="false"
                 >
                   Explore CSM{" "}
                 </a>
@@ -354,7 +354,7 @@ function Header() {
                   href="#"
                   data-toggle="dropdown"
                   ariaHasPopup="true"
-                  ariaExpanded="false"
+                  aria-expanded="false"
                 >
                   Athletics{" "}
                 </a>
@@ -464,7 +464,7 @@ function Header() {
                   href="#"
                   data-toggle="dropdown"
                   ariaHasPopup="true"
-                  ariaExpanded="false"
+                  aria-expanded="false"
                 >
                   Quick Links{" "}
                 </a>
@@ -542,7 +542,7 @@ function Header() {
                   href="#"
                   data-toggle="dropdown"
                   ariaHasPopup="true"
-                  ariaExpanded="false"
+                  aria-expanded="false"
                 >
                   Request Info{" "}
                 </a>
@@ -612,7 +612,7 @@ function Header() {
                   className="nav-search-btn nav-link"
                   data-toggle="collapse"
                   data-target="#collapseSearch"
-                  ariaExpanded="false"
+                  aria-expanded="false"
                 >
                   <svg
                     className="svg-inline--fa fa-search fa-w-16 fa-lg"
@@ -647,7 +647,7 @@ function Header() {
                   action="https://search.collegeofsanmateo.edu/s/search.html"
                   method="get"
                 >
-                  <label className="sr-only" for="as_q">
+                  <label className="sr-only" htmlFor="as_q">
                     Search CSM
                   </label>
                   <div className="input-group">
