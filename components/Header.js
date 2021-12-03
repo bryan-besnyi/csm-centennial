@@ -23,7 +23,7 @@ function Header() {
                   className="nav-link dropdown-toggle"
                   role="button"
                   data-toggle="dropdown"
-                  ariaHasPopup="true"
+                  aria-haspopup="true"
                   aria-expanded="false"
                 >
                   Academics{" "}
@@ -85,7 +85,7 @@ function Header() {
                   role="button"
                   href="#"
                   data-toggle="dropdown"
-                  ariaHasPopup="true"
+                  aria-haspopup="true"
                   aria-expanded="false"
                 >
                   Student Services{" "}
@@ -275,7 +275,7 @@ function Header() {
                   role="button"
                   href="#"
                   data-toggle="dropdown"
-                  ariaHasPopup="true"
+                  aria-haspopup="true"
                   aria-expanded="false"
                 >
                   Explore CSM{" "}
@@ -353,7 +353,7 @@ function Header() {
                   role="button"
                   href="#"
                   data-toggle="dropdown"
-                  ariaHasPopup="true"
+                  aria-haspopup="true"
                   aria-expanded="false"
                 >
                   Athletics{" "}
@@ -463,7 +463,7 @@ function Header() {
                   role="button"
                   href="#"
                   data-toggle="dropdown"
-                  ariaHasPopup="true"
+                  aria-haspopup="true"
                   aria-expanded="false"
                 >
                   Quick Links{" "}
@@ -541,7 +541,7 @@ function Header() {
                   role="button"
                   href="#"
                   data-toggle="dropdown"
-                  ariaHasPopup="true"
+                  aria-haspopup="true"
                   aria-expanded="false"
                 >
                   Request Info{" "}
@@ -655,7 +655,7 @@ function Header() {
                       id="as_q"
                       className="border-white form-control form-control-lg"
                       type="search"
-                      autocomplete="off"
+                      autoComplete="off"
                       placeholder="Search CSM"
                       required=""
                       name="query"
