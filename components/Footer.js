@@ -8,7 +8,7 @@ function Footer() {
               href="https://a.cms.omniupdate.com/11/?skin=smcccd&amp;account=CSM&amp;site=CSM-Prod&amp;action=de&amp;path=/100/index.pcf"
               target="_blank"
               className="footer-svg-link"
-              rel="noopener"
+              rel="noreferrer"
               aria-label="OmniUpdate Login (Employees Only)"
             >
               <svg
@@ -35,7 +35,7 @@ function Footer() {
           <div className="footer-menu">
             <ul className="footer-interior-list">
               <li>
-                <a href="//collegeofsanmateo.edu">CSM&nbsp;Home</a>
+                <a href="https://collegeofsanmateo.edu">CSM&nbsp;Home</a>
               </li>
               <li>
                 <a href="https://collegeofsanmateo.edu/aboutcsm/">
@@ -43,7 +43,7 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="//collegeofsanmateo.edu/enroll">
+                <a href="https://collegeofsanmateo.edu/enroll">
                   Apply&nbsp;&amp;&nbsp;Enroll
                 </a>
               </li>
@@ -79,14 +79,16 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/schedule/">Schedule&nbsp;&amp;&nbsp;Catalog</a>
+                <a href="https://collegeofsanmateo.edu/schedule/">
+                  Schedule&nbsp;&amp;&nbsp;Catalog
+                </a>
               </li>
               <li>
                 <a
-                  href="//smccd.edu/accessibility"
+                  href="https://smccd.edu/accessibility"
                   aria-label="Accessibility (Opens in New Window)"
                   target="_blank"
-                  rel="noopener"
+                  rel="noreferrer"
                 >
                   Web Accessibility
                 </a>
@@ -96,7 +98,7 @@ function Footer() {
                   href="https://collegeofsanmateo.edu/websmart/"
                   aria-label="WebSMART (Opens in New Window)"
                   target="blank"
-                  rel="noopener"
+                  rel="noreferrer"
                 >
                   WebSMART
                 </a>
@@ -106,7 +108,7 @@ function Footer() {
                   href="https://collegeofsanmateo.edu/webmaster/"
                   aria-label="Webmaster (Opens in New Window)"
                   target="_blank"
-                  rel="noopener"
+                  rel="noreferrer"
                 >
                   Webmaster
                 </a>

@@ -282,7 +282,10 @@ function Header() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="/bookstore">
+                    <a
+                      className="dropdown-item"
+                      href="https://collegeofsanmateo.edu/bookstore"
+                    >
                       Bookstore
                     </a>
                   </li>
@@ -380,7 +383,7 @@ function Header() {
                       className="dropdown-item"
                       href="https://collegeofsanmateo.edu/mbb/"
                     >
-                      Basketball: Men's
+                      Basketball: Men&apos;s
                     </a>
                   </li>
                   <li>
@@ -388,7 +391,7 @@ function Header() {
                       className="dropdown-item"
                       href="https://collegeofsanmateo.edu/basketball/"
                     >
-                      Basketball: Women's
+                      Basketball: Women&apos;s
                     </a>
                   </li>
                   <li>

@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 
 function Layout({ children }) {
   return (
@@ -27,24 +27,30 @@ function Layout({ children }) {
                 <div className="collapse navbar-collapse" id="subnav-menu">
                   <ul className="nav navbar-nav flex-column sidenav-list w-100">
                     <li className="nav-item">
-                      <a href="/100">Overview</a>
+                      <a href="https://collegeofsanmateo.edu/100">Overview</a>
                     </li>
                     <li className="nav-item">
-                      <a href="/100/stories.php">Stories</a>
+                      <a href="https://collegeofsanmateo.edu/100/stories.php">
+                        Stories
+                      </a>
                     </li>
                     <li className="nav-item">
-                      <a href="/100/committee.php">Centennial Committee</a>
+                      <a href="https://collegeofsanmateo.edu/100/committee.php">
+                        Centennial Committee
+                      </a>
                     </li>
                     <li className="nav-item">
-                      <a href="/100/committee-development.php">
+                      <a href="https://collegeofsanmateo.edu/100/committee-development.php">
                         Development Committee
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a href="/100/committee-events.php">Events Committee</a>
+                      <a href="https://collegeofsanmateo.edu/100/committee-events.php">
+                        Events Committee
+                      </a>
                     </li>
                     <li className="nav-item">
-                      <a href="/100/logowinner.php">
+                      <a href="https://collegeofsanmateo.edu/100/logowinner.php">
                         Logo Winner &amp; Finalists
                       </a>
                     </li>
@@ -70,7 +76,7 @@ function Layout({ children }) {
                   </section>
                   <div className="csm-carousel col-lg-12 pr-0 d-none d-md-block">
                     <div>
-                      <img
+                      <Image
                         className="img-fluid"
                         src="https://collegeofsanmateo.edu/100/images/centennial-banner.jpg"
                         alt="Celebrating 100 Years: 1922-2022"

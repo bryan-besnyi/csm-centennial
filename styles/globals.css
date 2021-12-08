@@ -38,3 +38,5 @@ body {
 .border-primary {
   border-color: #adb5bd !important;
 }
+
+li > p { margin-bottom: 0; }

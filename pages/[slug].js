@@ -33,12 +33,9 @@ export async function getStaticProps({ params }) {
 
 export default function Story({ story }) {
   let content = story.fields.fullStory.content;
-  console.log(content);
   return (
     <>
-      <h1>
-        {story.fields.title} <small>({story.fields.slug})</small>
-      </h1>
+      <h1>{story.fields.title}</h1>
       <img
         src={story.fields.image[0].fields.image.fields.file.url}
         alt={story.fields.image[0].fields.caption2.content[0].content[0].value}
@@ -52,9 +49,6 @@ export default function Story({ story }) {
       <p>
         <em>{story.fields.subtitle}</em>
       </p>
-
-      <div>{content.map((item) => console.log(item))}</div>
-
       <div>{content.map((item) => documentToReactComponents(item))}</div>
     </>
   );

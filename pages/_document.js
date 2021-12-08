@@ -13,6 +13,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel="icon" href="https://collegeofsanmateo.edu/favicon.ico" />
           <link
             href="https://www.collegeofsanmateo.edu/_includes/csm-bootstrap.css?v=1.3.7"
             rel="stylesheet"
@@ -41,20 +42,10 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           />
-
           <link
             href="https://collegeofsanmateo.edu/z-omniupdate/css/icons.css"
             rel="stylesheet"
           />
-          {/* <script
-            src="https://collegeofsanmateo.edu/assets/scripts/icons.js"
-            type="text/javascript"
-          ></script> */}
-
-          {/* <script
-            type="text/javascript"
-            src="https//www.google-analytics.com/urchin.js"
-          ></script> */}
         </Head>
         <body className="body--interior">
           <Header />

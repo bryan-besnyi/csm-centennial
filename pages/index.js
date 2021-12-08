@@ -35,16 +35,36 @@ categoryData.forEach((element) =>
   console.log(filterItems(categoryData, element))
 );
 
+export async function getStaticProps() {
+  let storyData = await client.getEntries({ content_type: "story" });
+
+  return {
+    props: {
+      stories: storyData.items,
+    },
+  };
+}
+
 export default function Home({ stories }) {
-  console.log(categoryData);
   return (
     <main>
       <div className="container-fluid">
         <div className="row">
           <h2 className="pl-0 col-12">Categories</h2>
+          <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+            qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+            sed quia non numquam eius modi tempora incidunt ut labore et dolore
+            magnam aliquam quaerat voluptatem.
+          </p>
           {categoryData.map((category) => {
             return (
-              <div key={category} className="pl-0 col-6">
+              <div key={category} className="pl-0 col-6 col-md-3">
                 <input type="checkbox" id={category} key={category} />
                 <label className="ml-1" htmlFor={category}>
                   {category}
@@ -66,7 +86,7 @@ export default function Home({ stories }) {
                 {/* {story.fields.categoryOrCategories.map((category) => {
                   return <p>{category}</p>;
                 })} */}
-                <div className="card-body d-flex flex-column justify-content-between text-primary ">
+                <div className="card-body d-flex flex-column justify-content-between text-primary">
                   <em className="card-text">{story.fields.subtitle}</em>
                   <div>
                     <p>
@@ -77,11 +97,6 @@ export default function Home({ stories }) {
                       </Link>
                     </p>
                   </div>
-                  <img
-                    className="img-fluid"
-                    src={story.fields.image[0].fields.image.fields.file.url}
-                    alt=""
-                  />
                 </div>
               </div>
             </div>
@@ -90,14 +105,4 @@ export default function Home({ stories }) {
       </div>
     </main>
   );
-}
-
-export async function getStaticProps() {
-  let storyData = await client.getEntries({ content_type: "story" });
-
-  return {
-    props: {
-      stories: storyData.items,
-    },
-  };
 }
