@@ -5,9 +5,45 @@ let client = require("contentful").createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
+let categoryData = [
+  "Featured",
+  "Administrator Profile",
+  "Art",
+  "Athletics",
+  "Awards",
+  "Campus",
+  "Celebrities",
+  "Entertainment",
+  "Equity",
+  "Faculty Profile",
+  "History",
+  "KCSM",
+  "Poetry",
+  "Programs",
+  "Staff Profile",
+  "Student Life",
+  "Student Profile",
+];
+
 export default function Home({ stories }) {
+  console.log(categoryData);
   return (
     <main>
+      <div className="container-fluid">
+        <div className="row">
+          <h2 className="pl-0 col-12">Categories</h2>
+          {categoryData.map((category) => {
+            return (
+              <div key={category} className="pl-0 col-6">
+                <input type="checkbox" id={category} key={category} />
+                <label className="ml-1" htmlFor={category}>
+                  {category}
+                </label>
+              </div>
+            );
+          })}
+        </div>
+      </div>
       <div className="row mt-0 pt-0">
         {stories.map((story) => {
           return (
@@ -17,10 +53,12 @@ export default function Home({ stories }) {
             >
               <div className="card border-primary d-flex h-100 flex-column mb-3">
                 <h2 className="card-header">{story.fields.title}</h2>
-                <small>{story.fields.categoryOrCategories}</small>
+                {/* {story.fields.categoryOrCategories.map((category) => {
+                  return <p>{category}</p>;
+                })} */}
                 <div className="card-body d-flex flex-column justify-content-between text-primary ">
+                  <em className="card-text">{story.fields.subtitle}</em>
                   <div>
-                    <em className="card-text">{story.fields.subtitle}</em>
                     <p>
                       <Link href={`/${story.fields.slug}`}>
                         <a className="btn btn-primary mb-3">
@@ -45,11 +83,11 @@ export default function Home({ stories }) {
 }
 
 export async function getStaticProps() {
-  let data = await client.getEntries({ content_type: "story" });
+  let storyData = await client.getEntries({ content_type: "story" });
 
   return {
     props: {
-      stories: data.items,
+      stories: storyData.items,
     },
   };
 }
