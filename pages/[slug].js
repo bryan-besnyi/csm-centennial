@@ -1,3 +1,5 @@
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
 let client = require("contentful").createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
@@ -30,29 +32,30 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Story({ story }) {
-  console.log(story);
+  let content = story.fields.fullStory.content;
+  console.log(content);
   return (
     <>
       <h1>
         {story.fields.title} <small>({story.fields.slug})</small>
       </h1>
+      <img
+        src={story.fields.image[0].fields.image.fields.file.url}
+        alt={story.fields.image[0].fields.caption2.content[0].content[0].value}
+        style={{
+          maxWidth: "300px",
+          float: "right",
+          marginLeft: "1em",
+          marginBottom: "1em",
+        }}
+      />
       <p>
-        Subtitle: <em>{story.fields.subtitle}</em>
+        <em>{story.fields.subtitle}</em>
       </p>
-      <p>
-        Image:
-        <br />
-        <img
-          src={story.fields.image[0].fields.image.fields.file.url}
-          alt={
-            story.fields.image[0].fields.caption2.content[0].content[0].value
-          }
-        />
-      </p>
-      <p>
-        Full Story: <br />
-        {story.fields.fullStory.content[0].content[0].value}
-      </p>
+
+      <div>{content.map((item) => console.log(item))}</div>
+
+      <div>{content.map((item) => documentToReactComponents(item))}</div>
     </>
   );
 }
