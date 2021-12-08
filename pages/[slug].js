@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Head from "next/head";
+
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 let client = require("contentful").createClient({
@@ -33,18 +36,21 @@ export async function getStaticProps({ params }) {
 
 export default function Story({ story }) {
   let content = story.fields.fullStory.content;
+  console.log(content);
   return (
     <>
+      <Head>
+        <title>
+          {story.fields.title} | CSM Centennial | College of San Mateo
+        </title>
+      </Head>
       <h1>{story.fields.title}</h1>
-      <img
-        src={story.fields.image[0].fields.image.fields.file.url}
+      <Image
+        src={`https:${story.fields.image[0].fields.image.fields.file.url}`}
         alt={story.fields.image[0].fields.caption2.content[0].content[0].value}
-        style={{
-          maxWidth: "300px",
-          float: "right",
-          marginLeft: "1em",
-          marginBottom: "1em",
-        }}
+        layout="fixed"
+        width="100"
+        height="100"
       />
       <p>
         <em>{story.fields.subtitle}</em>
