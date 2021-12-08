@@ -25,6 +25,16 @@ let categoryData = [
   "Student Profile",
 ];
 
+const filterItems = async (arr, query) => {
+  return arr.filter(function (el) {
+    return el.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+  });
+};
+
+categoryData.forEach((element) =>
+  console.log(filterItems(categoryData, element))
+);
+
 export default function Home({ stories }) {
   console.log(categoryData);
   return (
