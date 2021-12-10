@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 let client = require("contentful").createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
@@ -76,6 +77,9 @@ export default function Home({ stories }) {
       </div>
       <div className="row mt-0 pt-0">
         {stories.map((story) => {
+          {
+            console.log(story.fields.featuredImage.fields.file.url);
+          }
           return (
             <div
               key={story.sys.id}
@@ -87,7 +91,7 @@ export default function Home({ stories }) {
                   return <p>{category}</p>;
                 })} */}
                 <div className="card-body d-flex flex-column justify-content-between text-primary">
-                  <em className="card-text">{story.fields.subtitle}</em>
+                  <p className="card-text">{story.fields.subtitle}</p>
                   <div>
                     <p>
                       <Link href={`/${story.fields.slug}`}>
@@ -97,6 +101,13 @@ export default function Home({ stories }) {
                       </Link>
                     </p>
                   </div>
+                  <Image
+                    src={`https:${story.fields.featuredImage.fields.file.url}`}
+                    layout="responsive"
+                    alt=""
+                    width={640}
+                    height={336}
+                  />
                 </div>
               </div>
             </div>
