@@ -40,3 +40,9 @@ body {
 }
 
 li > p { margin-bottom: 0; }
+
+.csm-logo { 
+    display: block;
+    max-width: 100%;
+    fill: white;
+}

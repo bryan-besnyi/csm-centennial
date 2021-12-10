@@ -1,4 +1,5 @@
 import Image from "next/image";
+import bannerImage from "../public/images/banner.png";
 
 function Layout({ children }) {
   return (
@@ -76,12 +77,10 @@ function Layout({ children }) {
                   </section>
                   <div className="csm-carousel col-lg-12 pr-0 d-none d-md-block">
                     <div>
-                      <Image
+                      <img
                         className="img-fluid"
-                        src="https://collegeofsanmateo.edu/100/images/centennial-banner.jpg"
+                        src="/images/banner.png"
                         alt="Celebrating 100 Years: 1922-2022"
-                        width="1407"
-                        height="405"
                       />
                     </div>
                   </div>

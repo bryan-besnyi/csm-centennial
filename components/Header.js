@@ -1,3 +1,5 @@
+import Logo from "./Logo";
+
 function Header() {
   return (
     <header className="header">
@@ -680,12 +682,7 @@ function Header() {
       <div className="section--primary">
         <div className="container">
           <a className="logo-link" href="https://collegeofsanmateo.edu">
-            <img
-              className="logo"
-              style={{ width: "100%" }}
-              src="https://collegeofsanmateo.edu/images/logo/csm_signature_white.svg"
-              alt="College of San Mateo"
-            />
+            <Logo />
           </a>
         </div>
       </div>
