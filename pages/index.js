@@ -96,15 +96,12 @@ export default function Home({ stories }) {
               >
                 <div className="card border-primary d-flex h-100 flex-column mb-3">
                   <h2 className="card-header">{story.fields.title}</h2>
-                  {/* {story.fields.categoryOrCategories.map((category) => {
-                    return <p>{category}</p>;
-                  })} */}
                   <div className="card-body d-flex flex-column justify-content-between text-primary">
                     <p className="card-text">{story.fields.subtitle}</p>
                     <div>
-                      <p>
+                      <p className="mb-0">
                         <Link href={`/${story.fields.slug}`}>
-                          <a className="btn btn-primary mb-3">
+                          <a className="mb-0 btn btn-primary mb-3">
                             {story.fields.buttonText}
                           </a>
                         </Link>
@@ -117,6 +114,19 @@ export default function Home({ stories }) {
                       width={640}
                       height={336}
                     />
+                    <div className="d-flex">
+                      {story.fields.categoryOrCategories.map((category) => {
+                        return (
+                          <small
+                            key={category}
+                            className="text-white p-1 rounded mr-1"
+                            style={{ backgroundColor: `#23366F` }}
+                          >
+                            {category}
+                          </small>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>
