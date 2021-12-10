@@ -52,6 +52,10 @@ export default function Home({ stories }) {
     <>
       <Head>
         <title>Stories | CSM Centennial | College of San Mateo</title>
+        <meta
+          name="description"
+          content="Stories from one hundred years of College of San Mateo History to celebrate the centennial anniversary of the College."
+        />
       </Head>
       <main>
         <div className="container-fluid">
