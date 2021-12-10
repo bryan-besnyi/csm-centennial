@@ -13,7 +13,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="icon" href="https://collegeofsanmateo.edu/favicon.ico" />
+          <link rel="icon" href="/images/favicon.ico" />
           <link
             href="https://www.collegeofsanmateo.edu/_includes/csm-bootstrap.css?v=1.3.7"
             rel="stylesheet"

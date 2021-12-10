@@ -74,7 +74,7 @@ export default function Home({ stories }) {
             </p>
             {categoryData.map((category) => {
               return (
-                <div key={category} className="pl-0 col-6 col-md-3">
+                <div key={category} className="pl-0 col-12 col-sm-6 col-lg-3">
                   <input type="checkbox" id={category} key={category} />
                   <label className="ml-1" htmlFor={category}>
                     {category}
@@ -97,8 +97,8 @@ export default function Home({ stories }) {
                 <div className="card border-primary d-flex h-100 flex-column mb-3">
                   <h2 className="card-header">{story.fields.title}</h2>
                   {/* {story.fields.categoryOrCategories.map((category) => {
-                  return <p>{category}</p>;
-                })} */}
+                    return <p>{category}</p>;
+                  })} */}
                   <div className="card-body d-flex flex-column justify-content-between text-primary">
                     <p className="card-text">{story.fields.subtitle}</p>
                     <div>
