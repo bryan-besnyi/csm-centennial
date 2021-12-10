@@ -49,7 +49,7 @@ export default function Story({ story }) {
         style={{
           margin: `1em`,
           float: "right",
-          maxWidth: "240px",
+          maxWidth: "230px",
           marginBottom: "1rem",
         }}
       >
@@ -59,10 +59,10 @@ export default function Story({ story }) {
             <Image
               src={`https:${image.fields.image.fields.file.url}`}
               alt={image.fields.caption2.content[0].content[0].value}
-              layout="fixed"
+              layout="responsive"
               quality="75"
-              width="240"
-              height="120"
+              width={image.fields.image.fields.file.details.image.width}
+              height={image.fields.image.fields.file.details.image.height}
             />
             <p>
               <em>{image.fields.caption2.content[0].content[0].value}</em>
