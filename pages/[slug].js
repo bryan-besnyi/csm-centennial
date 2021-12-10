@@ -55,6 +55,7 @@ export default function Story({ story }) {
       >
         {story.fields.image.map((image) => (
           <>
+            {console.log(image)}
             <Image
               src={`https:${image.fields.image.fields.file.url}`}
               alt={image.fields.caption2.content[0].content[0].value}
@@ -69,13 +70,6 @@ export default function Story({ story }) {
           </>
         ))}
       </div>
-      {/* <Image
-        src={`https:${story.fields.image[0].fields.image.fields.file.url}`}
-        alt={story.fields.image[0].fields.caption2.content[0].content[0].value}
-        layout="fixed"
-        width="240"
-        height="120"
-      /> */}
       <p>
         <em>{story.fields.subtitle}</em>
       </p>
