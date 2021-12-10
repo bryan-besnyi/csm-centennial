@@ -49,7 +49,7 @@ export default function Story({ story }) {
         style={{
           margin: `1em`,
           float: "right",
-          maxWidth: "230px",
+          width: "230px",
           marginBottom: "1rem",
         }}
       >
