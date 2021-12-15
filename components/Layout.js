@@ -10,7 +10,9 @@ function Layout({ children }) {
             <div className="f-200 pr-0">
               <nav className="sidenav navbar-expand-md sectionmenu">
                 <header className="title-bar d-md-none d-flex navbar-dark">
-                  <span className="title-bar-title">CSM Centennial</span>
+                  <span className="title-bar-title">
+                    <h1>CSM Centennial</h1>
+                  </span>
                   <div className="ml-auto">
                     <button
                       className="btn btn-link text-light p-0 ml-3 navbar-toggler "
