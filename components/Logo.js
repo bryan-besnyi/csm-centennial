@@ -5,6 +5,7 @@ const Logo = () => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 560.4 110.8"
       className="w-100 csm-logo"
+      aria-label="Home"
     >
       <linearGradient
         gradientUnits="userSpaceOnUse"
