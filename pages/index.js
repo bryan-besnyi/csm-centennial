@@ -27,27 +27,31 @@ let categoryData = [
   "Student Profile",
 ];
 
-const filterItems = async (arr, query) => {
-  return arr.filter(function (el) {
-    return el.toLowerCase().indexOf(query.toLowerCase()) !== -1;
-  });
-};
+// const filterItems = async (arr, query) => {
+//   return arr.filter(function (el) {
+//     return el.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+//   });
+// };
 
-categoryData.forEach((element) =>
-  console.log(filterItems(categoryData, element))
-);
+// categoryData.forEach((element) =>
+//   console.log(filterItems(categoryData, element))
+// );
 
 export async function getStaticProps() {
   let storyData = await client.getEntries({ content_type: "story" });
+  let categoryData = await client.getEntries({ content_type: "category" });
 
   return {
     props: {
       stories: storyData.items,
+      categories: categoryData.items,
     },
   };
 }
 
-export default function Home({ stories }) {
+export default function Home({ stories, categories }) {
+  console.log(categories);
+  console.log(stories);
   return (
     <>
       <Head>
@@ -86,9 +90,9 @@ export default function Home({ stories }) {
         </div>
         <div className="row mt-0 pt-0">
           {stories.map((story) => {
-            {
-              console.log(story.fields.featuredImage.fields.file.url);
-            }
+            // {
+            //   console.log(story.fields.featuredImage.fields.file.url);
+            // }
             return (
               <div
                 key={story.sys.id}
