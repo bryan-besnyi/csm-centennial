@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
 let client = require("contentful").createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
@@ -50,8 +52,9 @@ export async function getStaticProps() {
 }
 
 export default function Home({ stories, categories }) {
-  console.log(categories);
-  console.log(stories);
+  // console.log(categories);
+  // console.log(stories.excerpt);
+
   return (
     <>
       <Head>
@@ -90,9 +93,11 @@ export default function Home({ stories, categories }) {
         </div>
         <div className="row mt-0 pt-0">
           {stories.map((story) => {
-            // {
-            //   console.log(story.fields.featuredImage.fields.file.url);
-            // }
+            {
+              console.log(JSON.stringify(story.fields.excerpt.content));
+            }
+            let content = story.fields.excerpt.content;
+
             return (
               <div
                 key={story.sys.id}
@@ -100,8 +105,10 @@ export default function Home({ stories, categories }) {
               >
                 <div className="card border-primary d-flex h-100 flex-column mb-3">
                   <h2 className="card-header">{story.fields.title}</h2>
-                  <div className="card-body d-flex flex-column justify-content-between text-primary">
-                    <p className="card-text">{story.fields.subtitle}</p>
+                  <div className="card-body d-flex flex-column justify-content-between">
+                    <p className="card-text">
+                      {content.map((item) => documentToReactComponents(item))}
+                    </p>
                     <div>
                       <p className="mb-0">
                         <Link href={`/${story.fields.slug}`}>
