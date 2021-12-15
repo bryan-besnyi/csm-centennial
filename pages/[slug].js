@@ -47,23 +47,24 @@ export default function Story({ story }) {
       <h1>{story.fields.title}</h1>
       <div
         style={{
-          margin: `1em`,
+          marginLeft: `1em`,
           float: "right",
           width: "230px",
-          marginBottom: "1rem",
+          marginBottom: "1em",
         }}
       >
         {story.fields.image.map((image) => (
           <>
-            {/* {console.log(image)} */}
-            <Image
-              src={`https:${image.fields.image.fields.file.url}`}
-              alt={image.fields.caption2.content[0].content[0].value}
-              layout="responsive"
-              quality="75"
-              width={image.fields.image.fields.file.details.image.width}
-              height={image.fields.image.fields.file.details.image.height}
-            />
+            <a href={`https:${image.fields.image.fields.file.url}`}>
+              <Image
+                src={`https:${image.fields.image.fields.file.url}`}
+                alt={image.fields.caption2.content[0].content[0].value}
+                layout="responsive"
+                quality="75"
+                width={image.fields.image.fields.file.details.image.width}
+                height={image.fields.image.fields.file.details.image.height}
+              />
+            </a>
             <p>
               <em>{image.fields.caption2.content[0].content[0].value}</em>
             </p>
