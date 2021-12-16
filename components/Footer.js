@@ -97,7 +97,7 @@ function Footer() {
                 <a
                   href="https://collegeofsanmateo.edu/websmart/"
                   aria-label="WebSMART (Opens in New Window)"
-                  target="blank"
+                  target="_blank"
                   rel="noreferrer"
                 >
                   WebSMART

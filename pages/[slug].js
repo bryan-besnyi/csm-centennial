@@ -36,7 +36,7 @@ export async function getStaticProps({ params }) {
 
 export default function Story({ story }) {
   let content = story.fields.fullStory.content;
-  // console.log(story);
+  console.log(story);
   return (
     <>
       <Head>
@@ -55,8 +55,13 @@ export default function Story({ story }) {
       >
         {story.fields.image.map((image) => (
           <>
-            <a href={`https:${image.fields.image.fields.file.url}`}>
+            <a
+              href={`https:${image.fields.image.fields.file.url}`}
+              target="_blank"
+              rel="noreferrer"
+            >
               <Image
+                key={image.fields.image.fields.file.url}
                 src={`https:${image.fields.image.fields.file.url}`}
                 alt={image.fields.caption2.content[0].content[0].value}
                 layout="responsive"
@@ -65,9 +70,9 @@ export default function Story({ story }) {
                 height={image.fields.image.fields.file.details.image.height}
               />
             </a>
-            <p>
+            <cite>
               <em>{image.fields.caption2.content[0].content[0].value}</em>
-            </p>
+            </cite>
           </>
         ))}
       </div>

@@ -40,6 +40,8 @@ body {
 }
 
 li > p { margin-bottom: 0; }
+.card-text { margin-bottom: .4rem;}
+.card-text p { margin-bottom: 0;}
 
 .csm-logo { 
     display: block;

@@ -29,15 +29,15 @@ let categoryData = [
   "Student Profile",
 ];
 
-// const filterItems = async (arr, query) => {
-//   return arr.filter(function (el) {
-//     return el.toLowerCase().indexOf(query.toLowerCase()) !== -1;
-//   });
-// };
+const filterItems = async (arr, query) => {
+  return arr.filter(function (el) {
+    return el.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+  });
+};
 
-// categoryData.forEach((element) =>
-//   console.log(filterItems(categoryData, element))
-// );
+categoryData.forEach((element) =>
+  console.log(filterItems(categoryData, element))
+);
 
 export async function getStaticProps() {
   let storyData = await client.getEntries({ content_type: "story" });
@@ -106,37 +106,39 @@ export default function Home({ stories, categories }) {
                 <div className="card border-primary d-flex h-100 flex-column mb-3">
                   <h2 className="card-header">{story.fields.title}</h2>
                   <div className="card-body d-flex flex-column justify-content-between">
-                    <p className="card-text">
+                    <div className="card-text">
                       {content.map((item) => documentToReactComponents(item))}
-                    </p>
-                    <div>
-                      <p className="mb-0">
-                        <Link href={`/${story.fields.slug}`}>
-                          <a className="mb-0 btn btn-primary mb-3">
-                            {story.fields.buttonText}
-                          </a>
-                        </Link>
-                      </p>
                     </div>
-                    <Image
-                      src={`https:${story.fields.featuredImage.fields.file.url}`}
-                      layout="responsive"
-                      alt=""
-                      width={640}
-                      height={336}
-                    />
-                    <div className="d-flex">
-                      {story.fields.categoryOrCategories.map((category) => {
-                        return (
-                          <small
-                            key={category}
-                            className="text-white p-1 rounded mr-1"
-                            style={{ backgroundColor: `#23366F` }}
-                          >
-                            {category}
-                          </small>
-                        );
-                      })}
+                    <div>
+                      <div>
+                        <p className="mb-0">
+                          <Link href={`/${story.fields.slug}`}>
+                            <a className="mb-0 btn btn-primary mb-3">
+                              {story.fields.buttonText}
+                            </a>
+                          </Link>
+                        </p>
+                      </div>
+                      <Image
+                        src={`https:${story.fields.featuredImage.fields.file.url}`}
+                        layout="responsive"
+                        alt=""
+                        width={640}
+                        height={336}
+                      />
+                      <div className="d-flex mt-2">
+                        {story.fields.categoryOrCategories.map((category) => {
+                          return (
+                            <small
+                              key={category}
+                              className="text-white p-1 rounded mr-1"
+                              style={{ backgroundColor: `#23366F` }}
+                            >
+                              {category}
+                            </small>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
                 </div>
